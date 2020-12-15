@@ -1,0 +1,447 @@
+body {
+  background: linear-gradient(#ffffff, #ffffff, #eeeded, #faf5f4);
+}
+
+.header {
+  height: 54px;
+  border-bottom: 1px solid rgb(214, 213, 213);
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  background-color: #fff;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+}
+
+.header .wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 975px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.logo {
+  height: 60px;
+  width: 103px;
+  background-image: url("./img/Instagram-Logo.png");
+  background-size: cover;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 28px;
+  width: 215px;
+  border: 1px solid rgb(214, 213, 213);
+}
+
+.fa-search {
+  font-size: 10px;
+  color: rgb(214, 213, 213);
+}
+
+.search .text {
+  font-size: 14px;
+  color: #8e8e8e;
+  margin-left: 5px;
+}
+
+.login_register {
+  display: flex;
+  align-items: center;
+}
+
+.login {
+  height: 29.6px;
+  width: 48px;
+  background-color: #0095f6;
+  color: #fff;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 28px;
+  font-size: 14px;
+  font-family: 800;
+}
+
+.register {
+  height: 29.6px;
+  width: 48px;
+  color: #0095f6;
+  font-weight: 800;
+  text-align: right;
+  line-height: 28px;
+  font-size: 14px;
+  font-family: 800;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 54px;
+}
+
+.row {
+  width: 975px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.profile {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 30px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgb(214, 213, 213);
+}
+
+.left {
+  background-color: #fff;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  padding-right: 0;
+}
+
+.prifile_pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 100px;
+
+  background-image: url("https://instagram.ftpe2-1.fna.fbcdn.net/v/t51.2885-19/s320x320/94181593_2603763219903657_7363821072233267200_n.jpg?_nc_ht=instagram.ftpe2-1.fna.fbcdn.net&_nc_ohc=7NMMdgLm86EAX-Qg_3G&tp=1&oh=12c45d331d1ad555a5335ecddb00fd2e&oe=5FFE8E07");
+  background-size: contain;
+  margin-left: 70px;
+}
+
+.account {
+  display: flex;
+}
+
+.name {
+  display: inline-block;
+  color: #262626;
+  font-size: 28px;
+  line-height: 32px;
+  font-weight: lighter;
+}
+
+.follow_btn {
+  display: inline-block;
+  height: 29.6px;
+  width: 48px;
+  background-color: #0095f6;
+  color: #fff;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 28px;
+  font-size: 14px;
+  font-family: 800;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.numbers {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.numbers .text {
+  margin-right: 35px;
+}
+
+.count {
+  font-weight: 600;
+  margin-right: 5px;
+}
+
+#fullname {
+  font-weight: 600;
+}
+
+/* 先把寬度設620排版才會跟範本一樣 */
+#biography {
+  width: 620px;
+}
+
+.switch {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  /* align-items: center; */
+}
+
+.line {
+  height: 1px;
+  width: 43px;
+  border-bottom: 1px solid #262626;
+  position: absolute;
+  top: -1px;
+  left: 35.5%
+  /* background-color: #262626; */
+}
+
+.switch .wrapper {
+  display: flex;
+  align-items: center;
+  height: 52px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.switch_icon {
+  fill: #8e8e8e;
+}
+
+.switch_text {
+  font-size: 13px;
+  font-weight: 600;
+  color: #8e8e8e;
+  margin-left: 5px;
+}
+
+.bold_text {
+  color: #262626;
+  fill: #262626;
+}
+
+.post_content {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* justify-content:stretch; */
+}
+
+.square {
+  width: 293px;
+  height: 293px;
+  /* border: 1px solid grey; */
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.square:hover {
+  cursor: pointer;
+}
+
+.square_hover {
+  width: 293px;
+  height: 293px;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.24);
+  display: none;
+  top: 0;
+}
+
+.square_hover div {
+  color: #fff;
+}
+
+.view_icon {
+  position: absolute;
+  top: 47%;
+  left: 27%;
+}
+
+.view_count {
+  font-weight: 600;
+  position: absolute;
+  top: 46%;
+  left: 36%;
+}
+
+.comment_icon {
+  position: absolute;
+  top: 46%;
+  left: 57%;
+}
+
+.comment_count {
+  font-weight: 600;
+  position: absolute;
+  top: 46%;
+  left: 67%;
+}
+
+.post_img {
+  width: 293px;
+  height: 293px;
+  object-fit: cover;
+}
+
+.post_igtv_icon {
+  position: absolute;
+  right: 5px;
+  top: 3px;
+}
+
+.hidden_square {
+  width: 293px;
+  height: 293px;
+  border: 1px solid grey;
+  margin-bottom: 25px;
+  visibility: hidden;
+}
+
+.related_account {
+  background-color: #fff;
+  width: 100%;
+  height: 277px;
+  overflow: hidden;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 25px;
+  margin-top: -25px;
+  /* temp */
+  margin-bottom: 20px;
+  border: 1px solid rgb(224, 221, 221);
+}
+
+.related_account .d-flex {
+  justify-content: space-between;
+}
+
+.related_account_text {
+  font-size: 14px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  color: #8e8e8e;
+}
+
+.see_all {
+  font-size: 14px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  color: #0095f6;
+  margin-right: 25px;
+}
+
+.see_all:hover {
+  cursor: pointer;
+}
+
+.accounts_wrapper {
+  display: flex;
+  position: absolute;
+  left: 0px;
+  transition: 0.4s;
+}
+
+.accounts_outer_wrapper {
+  position: relative;
+}
+
+.account_box {
+  flex: 0 0 174px;
+  /* width: 174px; */
+  height: 194.8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid rgb(224, 221, 221);
+  padding: 20px;
+  margin-right: 25px;
+  position: relative;
+  transition: 0.1.5s;
+}
+
+.account_box .pic {
+  border: 1px solid rgb(224, 221, 221);
+  width: 54px;
+  height: 54px;
+  border-radius: 27px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.account_box .pic img {
+  width: 54px;
+  height: 54px;
+
+  object-fit: contain;
+}
+
+.account_box .fa-times {
+  color: rgb(202, 199, 199);
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-weight: 400;
+}
+
+.account_box .fa-times:hover {
+  cursor: pointer;
+}
+
+.account_box .name {
+  /* border: 1px solid rgb(224, 221, 221); */
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 28px;
+}
+
+.account_box .intro {
+  /* border: 1px solid rgb(224, 221, 221); */
+  font-size: 14px;
+  color: #8e8e8e;
+  white-space: nowrap;
+  width: 134px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  text-align: center;
+}
+
+.account_box .account_btn {
+  border: 1px solid rgb(224, 221, 221);
+  width: 134px;
+  height: 29.6px;
+  background-color: #0095f6;
+  border-radius: 5px;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  padding-top: 3px;
+  margin-top: 10px;
+}
+
+.account_box .account_btn:hover {
+  cursor: pointer;
+}
+
+.ref {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 52px;
+  margin-top: 30px;
+}
+
+.ref .upper {
+  display: flex;
+  justify-content: center;
+}
+
+.ref .lower {
+  display: flex;
+  justify-content: center;
+}
+
+.ref_item {
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-bottom: 12px;
+  font-size: 12px;
+  color: #8e8e8e;
+}
+
+.ref_item:hover {
+  cursor: pointer;
+}
