@@ -31,7 +31,7 @@ $.ajax({
     }
     // 貼文是圖片
     else {
-      postContent.innerHTML += `<div class="square co1-4">
+      postContent.innerHTML += `<div class="square">
         <img
         class="post_img"
         src="${postArray[i].node.display_url}"
