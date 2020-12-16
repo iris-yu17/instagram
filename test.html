@@ -5,16 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      body {
-        background-color: #ffa;
+      .wrap {
+        display: flex;
       }
-
-      #Layer_1 path{
-          fill: aliceblue;
+      .box {
+        margin: 10px;
+        background-color: #fcc;
+        height: 50px;
+        width: 30px;
+      }
+      .new-parent {
+        display: flex;
+        position: absolute;
+        transition: 2s;
       }
     </style>
   </head>
   <body>
-    <img src="https://img.icons8.com/material-sharp/24/ffffff/igtv.png"/>
+    <div class="wrap">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+      <div class="box">6</div>
+      <div class="box">7</div>
+      <div class="box">8</div>
+      <div class="box">9</div>
+      <div class="box">10</div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(".box").click(function () {
+        $(this).css("display", "none");
+        $(this).nextAll().wrapAll('<div class="new-parent"></div>');
+        $(".new-parent").css("color", "#fff");
+        // $(".new-parent").css("top", "100px");
+        $(".new-parent").css("top", "200px");
+      });
+    </script>
   </body>
 </html>

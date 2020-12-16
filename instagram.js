@@ -96,16 +96,30 @@ $.ajax({
     </div>`;
   }
 
-  // 相關帳號 點擊叉叉按掉
-  const fa_times = document.querySelectorAll(".fa-times");
+  // 相關帳號 點擊箭頭瀏覽
   const accounts_wrapper = document.querySelector(".accounts_wrapper");
   let initial_position = 0;
 
-  $(".fa-times").click(function () {
-    $(this).parent().css("opacity", "0");
+  if (initial_position === 0) {
+    $(".fa-chevron-circle-left").css("display", "none");
+  }
 
-    new_position = initial_position -= 201;
+  $(".fa-chevron-circle-right").click(function () {
+    new_position = initial_position -= 804;
     accounts_wrapper.style.left = new_position + "px";
+    $(".fa-chevron-circle-left").css("display", "block");
+    if (new_position === -15276) {
+      $(".fa-chevron-circle-right").css("display", "none");
+    }
+  });
+
+  $(".fa-chevron-circle-left").click(function () {
+    new_position = initial_position += 804;
+    accounts_wrapper.style.left = new_position + "px";
+    $(".fa-chevron-circle-right").css("display", "block");
+    if (new_position === 0) {
+      $(".fa-chevron-circle-left").css("display", "none");
+    }
   });
 });
 
