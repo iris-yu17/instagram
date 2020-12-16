@@ -131,6 +131,12 @@ body {
   border-bottom: 1px solid rgb(214, 213, 213);
 }
 
+@media (max-width: 734.98px) {
+  .profile {
+    display: none;
+  }
+}
+
 .left {
   background-color: #fff;
 }
@@ -213,6 +219,12 @@ body {
   justify-content: center;
   position: relative;
   /* align-items: center; */
+}
+
+@media (max-width: 734.98px) {
+  .switch {
+    display: none;
+  }
 }
 
 .line {
@@ -306,6 +318,34 @@ body {
   position: absolute;
   top: 46%;
   left: 70%;
+}
+
+@media (max-width: 734.98px) {
+  .view_icon {
+    position: absolute;
+    top: 35%;
+    left: 33%;
+  }
+
+  .view_count {
+    font-weight: 600;
+    position: absolute;
+    top: 33%;
+    left: 48%;
+  }
+
+  .comment_icon {
+    position: absolute;
+    top: 48%;
+    left: 35%;
+  }
+
+  .comment_count {
+    font-weight: 600;
+    position: absolute;
+    top: 48%;
+    left: 52%;
+  }
 }
 
 .post_img {
@@ -551,4 +591,125 @@ body {
 
 .ref_item:hover {
   cursor: pointer;
+}
+
+/* mobile */
+
+.profile_m {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-around; */
+  /* align-items: center; */
+  /* padding-top: 30px; */
+  /* padding-bottom: 40px; */
+  margin-top: 17px;
+  border-bottom: 1px solid rgb(214, 213, 213);
+  display: none;
+}
+
+@media (max-width: 734.98px) {
+  .profile_m {
+    display: block;
+  }
+}
+
+.profile_m .top {
+  display: flex;
+}
+
+.profile_m .top .d-flex {
+  flex-direction: column;
+}
+
+.top .prifile_pic {
+  width: 77px;
+  height: 77px;
+  border-radius: 100px;
+
+  background-image: url("https://instagram.ftpe2-1.fna.fbcdn.net/v/t51.2885-19/s320x320/94181593_2603763219903657_7363821072233267200_n.jpg?_nc_ht=instagram.ftpe2-1.fna.fbcdn.net&_nc_ohc=7NMMdgLm86EAX-Qg_3G&tp=1&oh=12c45d331d1ad555a5335ecddb00fd2e&oe=5FFE8E07");
+  background-size: contain;
+  margin-left: 16px;
+}
+
+.top .name {
+  display: inline-block;
+  color: #262626;
+  font-size: 28px;
+  line-height: 32px;
+  font-weight: lighter;
+  margin-left: 25px;
+  margin-top: -5px;
+}
+
+.top .follow_btn {
+  display: inline-block;
+  height: 29.6px;
+  width: 48px;
+  background-color: #0095f6;
+  color: #fff;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 28px;
+  font-size: 14px;
+  font-family: 800;
+  margin-top: 8px;
+  margin-left: 25px;
+  margin-bottom: 20px;
+}
+
+.mid {
+  /* background-color: #ffa; */
+  padding-left: 16px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgb(214, 213, 213);
+}
+
+#fullname_m {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+#biography_m {
+  font-size: 14px;
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-around;
+}
+
+.bottom .d-flex {
+  flex-direction: column;
+  text-align: center;
+  padding: 8px;
+}
+
+.bottom .count {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.bottom .text {
+  font-size: 14px;
+  color: #8e8e8e;
+}
+
+.switch_m {
+  display: none;
+  justify-content: space-around;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+@media (max-width: 734.98px) {
+  .switch_m {
+    display: flex;
+  }
+}
+
+.switch_m .bold_text {
+  fill: #0095f6;
 }

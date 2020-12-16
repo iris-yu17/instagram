@@ -8,6 +8,12 @@ $.ajax({
   $("#following_count").text(result.graphql.user.edge_follow.count);
   $("#fullname").text(result.graphql.user.full_name);
   $("#biography").text(result.graphql.user.biography);
+   // 代入mobile pofile資訊 
+  $("#post_count_m").text(result.graphql.user.edge_owner_to_timeline_media.count);
+  $("#follower_count_m").text(result.graphql.user.edge_followed_by.count);
+  $("#following_count_m").text(result.graphql.user.edge_follow.count);
+  $("#fullname_m").text(result.graphql.user.full_name);
+  $("#biography_m").text(result.graphql.user.biography);
 
   // 顯示圖片
   const postArray = result.graphql.user.edge_owner_to_timeline_media.edges;
