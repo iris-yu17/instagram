@@ -237,12 +237,24 @@ body {
   /* background-color: #262626; */
 }
 
+@media (min-width: 735px) and (max-width: 991.98px) {
+  .line {
+    display: none;
+  }
+}
+
 .switch .wrapper {
   display: flex;
   align-items: center;
   height: 52px;
   margin-left: 30px;
   margin-right: 30px;
+}
+
+@media (min-width: 735px) and (max-width: 991.98px) {
+  .switch .actived {
+    border-top: 1px solid #262626;
+  }
 }
 
 .switch_icon {
@@ -420,6 +432,14 @@ body {
   border: 1px solid rgb(224, 221, 221);
 }
 
+@media (max-width: 734.98px) {
+  .related_account {
+    padding-top: 35px;
+    height: 300px;
+    /* margin-bottom: 35px; */
+  }
+}
+
 .related_account .d-flex {
   justify-content: space-between;
 }
@@ -458,6 +478,7 @@ body {
 .icon-wrapper {
   position: relative;
   top: 90px;
+  height: 10px;
 }
 
 .fa-chevron-circle-left {
@@ -477,7 +498,8 @@ body {
   font-size: 24px;
   position: absolute;
   top: 45%;
-  left: 875px;
+  /* left: 875px; */
+  right: 1vw;
   color: rgba(0, 0, 0, 0.5);
   z-index: 10;
 }
@@ -574,6 +596,7 @@ body {
 .ref .upper {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .ref .lower {
@@ -684,6 +707,7 @@ body {
   flex-direction: column;
   text-align: center;
   padding: 8px;
+  width: 90px;
 }
 
 .bottom .count {
@@ -712,4 +736,52 @@ body {
 
 .switch_m .bold_text {
   fill: #0095f6;
+}
+
+@media (max-width: 734.98px) {
+  .account_box {
+    height: 194.8px;
+    padding: 0px;
+    margin-right: 5px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .account_box .account_btn {
+    width: 122px;
+    height: 29.6px;
+  }
+
+  .account_box .pic {
+    border: 1px solid rgb(224, 221, 221);
+    width: 77px;
+    height: 77px;
+    border-radius: 38.5px;
+    overflow: hidden;
+    margin-bottom: 0px;
+  }
+  
+  .account_box .pic img {
+    width: 77px;
+    height: 77px;
+    object-fit: contain;
+  }
+
+  .account_box .name {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 28px;
+  }
+  
+  .account_box .intro {
+    font-size: 14px;
+    color: #8e8e8e;
+    white-space: nowrap;
+    width: 122px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-align: center;
+  }
+
+
 }
