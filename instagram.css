@@ -761,3 +761,15 @@ body {
     text-align: center;
   }
 }
+
+@media (max-width: 500px) {
+  .search {
+    display: none;
+  }
+
+  .square {
+    width: calc((100%-50px) / 3.08);
+    height: 29vw;
+    margin: 1px;
+  }
+}
