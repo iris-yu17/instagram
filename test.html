@@ -5,35 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      .wrap {
-        display: flex;
+      .box_wrapper {
+        float: left;
+        transition: 0.5s;
+        width: 100px;
+        height: 200px;
+        padding: 15px;
       }
+
       .box {
-        margin: 10px;
-        background-color: #fcc;
-        height: 50px;
-        width: 30px;
+        background-color: lightgrey;
+        width: 100px;
+        height: 100%;
+        padding: 10px;
+
+        /* Test */
+        /* border: 1px solid grey;
+        float: left; */
       }
-      .new-parent {
-        display: flex;
-        position: absolute;
-        transition: 2s;
+
+      .close {
+        float: right;
+        cursor: pointer;
       }
     </style>
   </head>
   <body>
-    <div class="wrap">
-      <div class="box">1</div>
-      <div class="box">2</div>
-      <div class="box">3</div>
-      <div class="box">4</div>
-      <div class="box">5</div>
-      <div class="box">6</div>
-      <div class="box">7</div>
-      <div class="box">8</div>
-      <div class="box">9</div>
-      <div class="box">10</div>
+    <div class="box_wrapper">
+      <div class="box"><span class="close">X</span>1</div>
     </div>
+    <div class="box_wrapper">
+      <div class="box"><span class="close">X</span>2</div>
+    </div>
+    <div class="box_wrapper">
+      <div class="box"><span class="close">X</span>3</div>
+    </div>
+    <div class="box_wrapper">
+      <div class="box"><span class="close">X</span>4</div>
+    </div>
+
+    <!-- <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+    <div class="box">5</div>
+    <div class="box">6</div> -->
 
     <script
       src="https://code.jquery.com/jquery-3.5.1.js"
@@ -41,12 +57,19 @@
       crossorigin="anonymous"
     ></script>
     <script>
+      $(".close").click(function () {
+        var el = $(this).closest(".box_wrapper");
+        el.css("width", 0);
+        el.css("opacity", 0);
+        el.css("padding-left", 0);
+        el.css("padding-right", 0);
+        setTimeout(function () {
+          el.remove();
+        }, 500);
+      });
+
       $(".box").click(function () {
         $(this).css("display", "none");
-        $(this).nextAll().wrapAll('<div class="new-parent"></div>');
-        $(".new-parent").css("color", "#fff");
-        // $(".new-parent").css("top", "100px");
-        $(".new-parent").css("top", "200px");
       });
     </script>
   </body>
