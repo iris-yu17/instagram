@@ -59,6 +59,9 @@ $.ajax({
     // 看 api typename是甚麼，決定用甚麼icon
     let typeName = postArray[i].node.__typename;
 
+    // let typeName = postArray[i].node.product_type;
+    // if (typeName === "igtv") {
+      
     if (typeName === "GraphVideo") {
       square[
         i
@@ -144,8 +147,8 @@ if (nodesSameClass.length % 3 === 2) {
 
 // console.log(postArray);
 
-// fetch("https://www.instagram.com/bravo_artofwar/?__a=1")
-//   .then((r) => r.json())
-//   .then((result) => {
-//     console.log("result", result.graphql.user.edge_followed_by.count);
-//   });
+fetch("https://www.instagram.com/bravo_artofwar/?__a=1")
+  .then((r) => r.json())
+  .then((result) => {
+    console.log("result", result.graphql.user.edge_followed_by.count);
+  });
