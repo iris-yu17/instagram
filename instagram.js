@@ -1,6 +1,6 @@
 $.ajax({
-  url: "https://www.instagram.com/bravo_artofwar/?__a=1",
-  // url: "./temp_api.json",
+  // url: "https://www.instagram.com/bravo_artofwar/?__a=1",
+  url: "./temp_api.json",
 }).done(function (result) {
   // 代入profile資訊
   $("#post_count").text(result.graphql.user.edge_owner_to_timeline_media.count);
