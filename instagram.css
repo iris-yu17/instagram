@@ -285,6 +285,13 @@ body {
   top: 3px;
 }
 
+/* .post_video_icon{
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  height: 15px;
+} */
+
 .hidden_square {
   width: 293px;
   height: 293px;

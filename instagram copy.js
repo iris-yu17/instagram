@@ -8,23 +8,15 @@ $.ajax({
   $("#following_count").text(result.graphql.user.edge_follow.count);
   $("#fullname").text(result.graphql.user.full_name);
   $("#biography").text(result.graphql.user.biography);
-  // 代入mobile pofile資訊
-  $("#post_count_m").text(
-    result.graphql.user.edge_owner_to_timeline_media.count
-  );
+   // 代入mobile pofile資訊 
+  $("#post_count_m").text(result.graphql.user.edge_owner_to_timeline_media.count);
   $("#follower_count_m").text(result.graphql.user.edge_followed_by.count);
   $("#following_count_m").text(result.graphql.user.edge_follow.count);
   $("#fullname_m").text(result.graphql.user.full_name);
   $("#biography_m").text(result.graphql.user.biography);
-});
 
-$.ajax({
-  // url: "https://www.instagram.com/bravo_artofwar/?__a=1",
-  url:
-    "https://www.instagram.com/graphql/query/?query_id=17888483320059182&id=33487574834&first=12",
-}).done(function (result) {
   // 顯示圖片
-  const postArray = result.data.user.edge_owner_to_timeline_media.edges;
+  const postArray = result.graphql.user.edge_owner_to_timeline_media.edges;
   console.log(postArray);
   for (i = 0; i < postArray.length; i++) {
     // 貼文是影片
@@ -52,7 +44,7 @@ $.ajax({
         alt=""/>
         <div class="square_hover">
           <img class="view_icon" src="./img/heart.svg">
-          <div class="view_count">${postArray[i].node.edge_media_preview_like.count}
+          <div class="view_count">${postArray[i].node.edge_liked_by.count}
           </div>
           <img class="comment_icon" src="./img/chat-bubble.svg">
           <div class="comment_count">${postArray[i].node.edge_media_to_comment.count}
@@ -66,29 +58,16 @@ $.ajax({
   for (i = 0; i < postArray.length; i++) {
     // 看 api typename是甚麼，決定用甚麼icon
     let typeName = postArray[i].node.__typename;
-    let dimensions = postArray[i].node.dimensions;
 
     // let typeName = postArray[i].node.product_type;
     // if (typeName === "igtv") {
-
-    // 影片類型
+      
     if (typeName === "GraphVideo") {
-      // 一般影片
-      if (dimensions.height === dimensions.width) {
-        square[
-          i
-        ].innerHTML += `<img class="post_igtv_icon" src="./img/video.png"/>`;
-      } else {
-        // igtv
-        square[
-          i
-        ].innerHTML += `<img class="post_igtv_icon" src="https://img.icons8.com/material-sharp/24/ffffff/igtv.png"/>`;
-      }
-      // 多張圖片
-    } else if (typeName === "GraphSidecar") {
       square[
         i
-      ].innerHTML += `<img class="post_igtv_icon" src="./img/multipage.png"/>`;
+      ].innerHTML += `<img class="post_igtv_icon" src="https://img.icons8.com/material-sharp/24/ffffff/igtv.png"/>`;
+    } else if (typeName === "GraphSidecar") {
+      // GraphSidecar
     } else {
       // GraphImage
     }
@@ -105,7 +84,56 @@ $.ajax({
       },
     });
   }
+
+  // 相關帳號
+  const accountArea = document.querySelector(".accounts_wrapper");
+  const relatedAccountArray = result.graphql.user.edge_related_profiles.edges;
+  console.log(relatedAccountArray);
+
+  for (i = 0; i < relatedAccountArray.length; i++) {
+    accountArea.innerHTML += `
+    <div class="account_box">
+      <i class="fas fa-times"></i>
+      <div class="pic">
+        <img src="${relatedAccountArray[i].node.profile_pic_url}">
+      </div>
+      <div class="name">
+      ${relatedAccountArray[i].node.username}</div>
+      <div class="intro">
+      ${relatedAccountArray[i].node.full_name}</div>
+      <div class="account_btn">追蹤</div>
+    </div>`;
+  }
+
+  // 相關帳號 點擊箭頭瀏覽
+  const accounts_wrapper = document.querySelector(".accounts_wrapper");
+  let initial_position = 0;
+
+  if (initial_position === 0) {
+    $(".fa-chevron-circle-left").css("display", "none");
+  }
+
+  $(".fa-chevron-circle-right").click(function () {
+    new_position = initial_position -= 804;
+    accounts_wrapper.style.left = new_position + "px";
+    $(".fa-chevron-circle-left").css("display", "block");
+    if (new_position === -15276) {
+      $(".fa-chevron-circle-right").css("display", "none");
+    }
+  });
+
+  $(".fa-chevron-circle-left").click(function () {
+    new_position = initial_position += 804;
+    accounts_wrapper.style.left = new_position + "px";
+    $(".fa-chevron-circle-right").css("display", "block");
+    if (new_position === 0) {
+      $(".fa-chevron-circle-left").css("display", "none");
+    }
+  });
 });
+
+
+
 
 // 為了排版，若一行的貼文數不是三的話補上隱形div
 const postContent = document.querySelector(".post_content");
@@ -125,5 +153,5 @@ if (nodesSameClass.length % 3 === 2) {
 fetch("https://www.instagram.com/bravo_artofwar/?__a=1")
   .then((r) => r.json())
   .then((result) => {
-    console.log("result", result.data.user.edge_followed_by.count);
+    console.log("result", result.graphql.user.edge_followed_by.count);
   });
